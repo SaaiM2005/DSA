@@ -90,3 +90,89 @@ void display(SLIST *t)
         }
     }
 }
+//FUNCTION TO COMPUTE DATA SUM
+int sum(SLIST *t)
+{
+    int tot=0;
+    NODE *a=t->st;
+    while(a!=NULL)
+    {
+        tot+=tot+a->data;
+        a=a->next;
+    }
+    return tot;
+}
+//FUNCTION TO FIND OUT MAXIMUM DATA FROM THE LIST
+int findMax(SLIST *t)
+{
+    int max;
+    NODE *a=t->st;
+    while(a!=NULL)
+    {
+        if(a==t->st)
+        {
+            max=a->data;
+        }
+        else
+        {
+            if(a->data>max)
+            {
+                max=a->data;
+            }
+        }
+        a=a->next;
+    }
+    return max;
+}
+//FUNCTION TO FIND OUT MINIMUM DATA FROM THE LIST
+int findMin(SLIST *t)
+{
+    int min;
+    NODE *a=t->st;
+    while(a!=NULL)
+    {
+        if(a==t->st)
+        {
+            min=a->data;
+        }
+        else
+        {
+            if(a->data>min)
+            {
+                min=a->data;
+            }
+        }
+        a=a->next;
+    }
+    return min;
+}
+//FUNCTION TO COUNT NODES HAVING ODD DATA
+int ocount(SLIST *t)
+{
+    int cnt=0;
+    NODE *a=t->st;
+    while(a!=NULL)
+    {
+        if(a->data%2==1)//GIVES ODD COUNT
+        {
+            cnt++;
+        }
+        a=a->next;
+    }
+    return cnt;
+}
+//FUNCTION TO COUNT NODES HAVING EVEN DATA
+int ecount(SLIST *t)
+{
+    int cnt=0;
+    NODE *a=t->st;
+    while(a!=NULL)
+    {
+        if(a->data%2==0)//GIVES EVEN COUNT
+        {
+            cnt++;
+        }
+        a=a->next;
+    }
+    return cnt;
+}
